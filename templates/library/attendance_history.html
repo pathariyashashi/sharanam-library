@@ -1,0 +1,112 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Attendance History</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            background:#f4f7fb;
+            padding:40px;
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:30px;
+            color:#1d3557;
+        }
+
+        table{
+
+            width:100%;
+
+            border-collapse:collapse;
+
+            background:white;
+
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+
+        }
+
+        th{
+
+            background:#007bff;
+
+            color:white;
+
+            padding:15px;
+
+        }
+
+        td{
+
+            padding:15px;
+
+            text-align:center;
+
+            border-bottom:1px solid #ddd;
+
+        }
+
+        tr:hover{
+
+            background:#f1f1f1;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>📋 Attendance History</h1>
+
+    <table>
+
+        <tr>
+
+            <th>Date</th>
+
+            <th>Check In</th>
+
+            <th>Check Out</th>
+
+        </tr>
+
+        {% for record in records %}
+
+        <tr>
+
+            <td>{{ record.date }}</td>
+
+          <td>
+    {% if record.check_in %}
+    {{ record.check_in }}
+{% else %}
+    Absent
+{% endif %}
+</td>
+
+<td>
+   {% if record.check_out %}
+    {{ record.check_out }}
+{% else %}
+    Not Checked Out
+{% endif %}
+</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</body>
+
+</html>

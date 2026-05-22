@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+
+    <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    margin:0;
+    padding:0;
+
+    background: linear-gradient(135deg, #b9cef5, #fdfeff);
+
+    min-height:100vh;
+    font-family: Arial, sans-serif;
+}
+/* TOP SECTION */
+
+.top-section{
+
+    width:100%;
+
+    min-height:420px;
+
+    padding:30px;
+
+    background:linear-gradient(to right,#0047ff,#00bfff);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:25px;
+}
+
+/* LEFT */
+
+.library-box{
+    width:20%;
+}
+
+.library-box h1{
+
+    color:white;
+
+    font-size:58px;
+
+    line-height:75px;
+
+    font-weight:bold;
+}
+
+/* CENTER */
+
+.center-box{
+
+    width:40%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin-top:30px;
+}
+
+/* WELCOME */
+
+.welcome-box{
+
+    background:#2d2d6d;
+
+    color:white;
+
+    padding:20px 45px;
+
+    border-radius:20px;
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+
+    margin-bottom:30px;
+}
+
+/* ENTRY EXIT BUTTONS */
+
+.entry-exit-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+}
+
+.entry-btn,
+.exit-btn{
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:20px 35px;
+
+    border-radius:20px;
+
+    min-width:220px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+
+    transition:0.3s;
+}
+
+.entry-btn{
+    background:#16a34a;
+}
+
+.exit-btn{
+    background:#ef4444;
+}
+
+.entry-btn:hover,
+.exit-btn:hover{
+
+    transform:translateY(-5px);
+}
+
+/* BUTTON TEXT */
+
+.btn-title{
+
+    font-size:28px;
+
+    font-weight:bold;
+}
+
+.btn-time{
+
+    margin-top:10px;
+
+    font-size:22px;
+
+    background:rgba(255,255,255,0.2);
+
+    padding:6px 15px;
+
+    border-radius:10px;
+}
+
+.btn-status{
+
+    margin-top:10px;
+
+    font-size:16px;
+}
+
+/* PROFILE BOX */
+
+.profile-box{
+
+    width:25%;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.profile-box h2{
+
+    margin-bottom:20px;
+
+    color:#1e3c72;
+}
+
+.profile-box p{
+
+    margin-bottom:10px;
+
+    line-height:25px;
+
+    color:#444;
+}
+
+/* PROFILE BUTTONS */
+
+.profile-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-top:20px;
+}
+
+.edit-btn,
+.logout-btn{
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.edit-btn{
+    background:#1e3c72;
+}
+
+.logout-btn{
+    background:#ff4d6d;
+}
+
+.edit-btn:hover,
+.logout-btn:hover{
+
+    transform:scale(1.05);
+}
+
+/* CARDS SECTION */
+
+.cards-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+    padding:25px;
+}
+
+/* CARD */
+
+.card{
+
+    background:white;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    box-shadow:0 5px 12px rgba(0,0,0,0.1);
+
+    transition:0.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+}
+
+.card h3{
+
+    margin-bottom:18px;
+
+    color:#0066cc;
+
+    font-size:28px;
+}
+
+.card p{
+
+    margin-bottom:10px;
+
+    color:#555;
+
+    font-size:22px;
+
+    line-height:30px;
+}
+
+/* NOTIFICATION */
+
+.notification-card{
+
+    grid-column:span 2;
+}
+
+.notification-card ul{
+
+    margin-top:10px;
+
+    padding-left:20px;
+}
+
+.notification-card li{
+
+    margin-bottom:12px;
+
+    color:#555;
+
+    font-size:20px;
+}
+
+@media(max-width:768px){
+
+    .top-section{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        padding:20px;
+
+    }
+
+    .library-box,
+    .center-box,
+    .profile-box{
+
+        width:100%;
+
+    }
+
+    .entry-exit-buttons{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    .cards-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        text-align:center;
+
+    }
+
+    .nav-links{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .nav-links a{
+
+        margin:10px;
+
+        font-size:16px;
+
+    }
+
+    .card{
+
+        width:100%;
+
+    }
+
+}
+
+
+    </style>
+
+
+</head>
+<body>
+
+    {% include 'library/navbar.html' %}
+<div class="top-section">
+
+    <!-- LEFT -->
+    <div class="library-box">
+
+        <h1>
+            📚 Self Study Library
+        </h1>
+
+    </div>
+
+    <!-- CENTER -->
+    <div class="center-box">
+
+        <div class="welcome-box">
+            👋 Welcome, {{ student.fullname }}
+        </div>
+
+        <div class="entry-exit-buttons">
+
+            <!-- ENTRY -->
+
+            <a href="/entry/" class="entry-btn">
+
+                <div class="btn-title">
+                    🟢 Entry
+                </div>
+
+                <div class="btn-time">
+
+                    {% if attendance.check_in %}
+
+                        {{ attendance.check_in }}
+
+                    {% else %}
+
+                        Not Marked
+
+                    {% endif %}
+
+                </div>
+
+                <div class="btn-status">
+                    Checked In
+                </div>
+
+            </a>
+
+            <!-- EXIT -->
+
+            <a href="/exit/" class="exit-btn">
+
+                <div class="btn-title">
+                    🔴 Exit
+                </div>
+
+                <div class="btn-time">
+
+                    {% if attendance.check_out %}
+
+                        {{ attendance.check_out }}
+
+                    {% else %}
+
+                        Not Marked
+
+                    {% endif %}
+
+                </div>
+
+                <div class="btn-status">
+                    Checked Out
+                </div>
+
+            </a>
+
+        </div>
+<div style="margin-top:25px; text-align:center;">
+
+    <a href="/attendance-history/" 
+    style="
+        background:linear-gradient(to right,#007bff,#00c6ff);
+        color:white;
+        padding:14px 28px;
+        border-radius:12px;
+        text-decoration:none;
+        font-size:20px;
+        font-weight:bold;
+        display:inline-block;
+        box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    ">
+
+        📋 Attendance History
+
+    </a>
+
+</div>
+<div style="margin-top:20px; text-align:center;">
+
+       
+    <a href="/seat-booking/"
+       style="
+       background:linear-gradient(to right,#28a745,#20c997);
+       color:white;
+       padding:14px 28px;
+       border-radius:12px;
+       text-decoration:none;
+       font-size:20px;
+       font-weight:bold;
+       display:inline-block;
+       box-shadow:0 4px 10px rgba(0,0,0,0.3);
+       ">
+
+       📑 Book Seat
+
+    </a>
+
+</div>
+    </div>
+
+    <!-- RIGHT PROFILE -->
+
+    <div class="profile-box">
+
+        <h2>
+            🎓 Student Profile
+        </h2>
+
+        <p>
+            <b>Full Name :</b>
+            {{ student.fullname }}
+        </p>
+
+        <p>
+            <b>Username :</b>
+            {{ student.username }}
+        </p>
+
+        <p>
+            <b>Email :</b>
+            {{ student.email }}
+        </p>
+
+        <p>
+            <b>Mobile :</b>
+            {{ student.mobile }}
+        </p>
+
+        <p>
+            <b>Gender :</b>
+            {{ student.gender }}
+        </p>
+
+        <p>
+            <b>Date of Birth :</b>
+            {{ student.dob }}
+        </p>
+
+        <p>
+            <b>Current Address :</b>
+            {{ student.current_address }}
+        </p>
+
+        <p>
+            <b>Permanent Address :</b>
+            {{ student.permanent_address }}
+        </p>
+
+        <!-- PROFILE BUTTONS -->
+
+        <div class="profile-buttons">
+
+            <a href="/edit-profile/" class="edit-btn">
+                ✏️ Edit
+            </a>
+
+            <a href="/logout/" class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- CARDS SECTION -->
+
+<div class="cards-container">
+
+    <!-- CURRENT SEAT -->
+
+    <div class="card">
+
+        <h3>
+            🚻 Current Seat
+        </h3>
+
+        <p>
+    Seat Number : {{ booking.seat_number }}
+</p>
+
+       <p>
+    Status : {{ booking.status }}
+</p>
+
+        <p>
+    Floor : {{ booking.floor }}
+</p>
+
+    </div>
+
+    <!-- BOOKING -->
+
+    <div class="card">
+
+        <h3>
+            🗓️ Booking Expiry
+        </h3>
+
+        <p>
+    Expiry Date : {{ booking.expiry_date }}
+</p>
+        <p>
+            Remaining : 12 Days
+        </p>
+
+    </div>
+
+    <!-- ATTENDANCE -->
+
+    <div class="card">
+
+        <h3>
+            📊 Attendance
+        </h3>
+
+        <p>
+            Attendance : 82%
+        </p>
+
+        <p>
+            Present : 23 Days
+        </p>
+
+        <p>
+            Absent : 5 Days
+        </p>
+
+    </div>
+
+    <!-- PAYMENT -->
+
+    <div class="card">
+
+        <h3>
+            💳 Payment Status
+        </h3>
+
+        <p>
+    Status : {{ payment.status }}
+</p>
+
+        <p>
+    Amount : ₹{{ payment.amount }}
+</p>
+
+        <p>
+    Next Due : {{ payment.expiry_date }}
+</p>
+
+<a href="/download-receipt/"
+
+style="
+background:linear-gradient(to right,#ff9800,#ff5722);
+color:white;
+padding:10px 20px;
+border-radius:10px;
+text-decoration:none;
+display:inline-block;
+margin-top:15px;
+font-weight:bold;
+">
+
+📄 Download Receipt
+
+</a>
+
+    </div>
+
+    <!-- NOTIFICATION -->
+
+    <div class="card notification-card">
+
+        <a href="/updates/" style="text-decoration:none; color:inherit;">
+
+    <h3>
+
+        🔔 Notifications
+
+    </h3>
+
+</a>
+<ul>
+      {% for note in notifications %}
+
+            <li>
+
+    {{ note}}
+
+    {% if forloop.first %}
+
+    <span style="
+        background:red;
+        color:white;
+        padding:2px 8px;
+        border-radius:8px;
+        font-size:12px;
+        margin-left:8px;
+    ">
+
+        NEW
+
+    </span>
+
+    {% endif %}
+
+</li>
+
+      {% endfor %}
+
+        </ul>
+
+    </div>
+
+</div>
+
+</body>

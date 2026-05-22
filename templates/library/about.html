@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Sharanam Library</title>
+
+    {% load static %}
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+
+            font-family:Arial,sans-serif;
+
+            background:#f4f7fb;
+
+            overflow-x:hidden;
+        }
+
+        /* BACKGROUND LOGO */
+
+        .bg-logo{
+
+            position:fixed;
+
+            top:50%;
+
+            left:50%;
+
+            transform:translate(-50%,-50%);
+
+            width:700px;
+
+            opacity:0.10;
+
+            z-index:-1;
+        }
+
+        /* MAIN SECTION */
+
+        .about-page{
+
+        margin-top:40px;
+        }
+
+        .about-title{
+
+            text-align:center;
+
+            font-size:65px;
+
+            color:#031b4e;
+
+            margin-bottom:15px;
+
+            font-weight:bold;
+        }
+
+        .about-sub{
+
+            text-align:center;
+
+            font-size:28px;
+
+            color:#555;
+
+            margin-bottom:60px;
+        }
+
+        .about-container{
+
+            background:rgba(255,255,255,0.90);
+
+            padding:50px;
+
+            border-radius:25px;
+
+            box-shadow:0 5px 20px rgba(0,0,0,0.12);
+        }
+
+        .about-section{
+
+            margin-bottom:50px;
+        }
+
+        .about-section h2{
+
+            color:#ff7700;
+
+            font-size:38px;
+
+            margin-bottom:25px;
+        }
+
+        .about-section p{
+
+            font-size:24px;
+
+            line-height:45px;
+
+            color:#333;
+
+            text-align:justify;
+
+            margin-bottom:25px;
+        }
+
+        .benefits{
+
+            display:grid;
+
+            grid-template-columns:repeat(2,1fr);
+
+            gap:25px;
+
+            margin-top:30px;
+        }
+
+        .benefit-card{
+
+            background:white;
+
+            padding:25px;
+
+            border-radius:18px;
+
+            box-shadow:0 4px 12px rgba(0,0,0,0.10);
+        }
+
+        .benefit-card h3{
+
+            color:#031b4e;
+
+            margin-bottom:15px;
+
+            font-size:28px;
+        }
+
+        .benefit-card p{
+
+            font-size:21px;
+
+            line-height:38px;
+        }
+
+        .quote-box{
+
+            background:#031b4e;
+
+            color:white;
+
+            padding:35px;
+
+            border-radius:20px;
+
+            text-align:center;
+
+            margin-top:40px;
+        }
+
+        .quote-box h2{
+
+            font-size:38px;
+
+            margin-bottom:20px;
+
+            color:#ff9900;
+        }
+
+        .quote-box p{
+
+            font-size:28px;
+
+            line-height:45px;
+        }
+ 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow-x:hidden;
+    font-family:Arial, sans-serif;
+}
+
+    </style>
+
+</head>
+
+<body>
+    {% include 'library/navbar.html' %}
+
+<!-- BACKGROUND LOGO -->
+
+<img src="{% static 'images/logo.jpg' %}" class="bg-logo">
+
+<section class="about-page">
+
+    <h1 class="about-title">
+
+        📚 शरणम् लाइब्रेरी
+
+    </h1>
+
+    <p class="about-sub">
+
+        शांत वातावरण • आत्मविश्वास • सफलता की ओर एक कदम
+
+    </p>
+
+    <div class="about-container">
+
+        <!-- ABOUT -->
+
+        <div class="about-section">
+
+            <h2>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                लाइब्रेरी के बारे में
+
+            </h2>
+
+            <p>
+
+                शारणम् सेल्फ स्टडी लाइब्रेरी विद्यार्थियों के लिए
+                एक शांत, अनुशासित और प्रेरणादायक अध्ययन स्थल है।
+                यहाँ विद्यार्थियों को ऐसा वातावरण मिलता है जहाँ वे
+                बिना किसी बाधा के अपने लक्ष्य पर पूरी एकाग्रता से
+                ध्यान दे सकते हैं।
+
+            </p>
+
+            <p>
+
+                आज के समय में मोबाइल, शोर और अन्य व्यर्थ चीजें
+                विद्यार्थियों का ध्यान पढ़ाई से भटका देती हैं।
+                सेल्फ स्टडी लाइब्रेरी विद्यार्थियों को इन सभी
+                distractions से दूर रखकर गंभीर अध्ययन का माहौल
+                प्रदान करती है।
+
+            </p>
+
+        </div>
+
+        <!-- SELF STUDY -->
+
+        <div class="about-section">
+
+            <h2>
+
+                <i class="fa-solid fa-book-open"></i>
+
+                सेल्फ स्टडी क्यों महत्वपूर्ण है
+
+            </h2>
+
+            <p>
+
+                सेल्फ स्टडी विद्यार्थियों को आत्मनिर्भर बनाती है।
+                जब विद्यार्थी स्वयं पढ़ाई करता है, तब उसकी समझ,
+                याद रखने की क्षमता और आत्मविश्वास बढ़ता है।
+                नियमित स्व-अध्ययन करने वाले विद्यार्थी प्रतियोगी
+                परीक्षाओं में अधिक सफल होते हैं।
+
+            </p>
+
+            <p>
+
+                सेल्फ स्टडी विद्यार्थियों में अनुशासन, धैर्य और
+                निरंतर मेहनत करने की आदत विकसित करती है।
+                यह सफलता की सबसे मजबूत नींव मानी जाती है।
+
+            </p>
+
+        </div>
+
+        <!-- TIME MANAGEMENT -->
+
+        <div class="about-section">
+
+            <h2>
+
+                <i class="fa-solid fa-clock"></i>
+
+                समय प्रबंधन का महत्व
+
+            </h2>
+
+            <p>
+
+                समय प्रबंधन प्रत्येक विद्यार्थी के लिए अत्यंत
+                आवश्यक है। सही समय पर सही कार्य करने से पढ़ाई
+                आसान और प्रभावी बनती है। लाइब्रेरी विद्यार्थियों
+                को नियमित अध्ययन और समय का सही उपयोग करना सिखाती है।
+
+            </p>
+
+            <p>
+
+                जब विद्यार्थी समय के अनुसार पढ़ाई करता है,
+                तब उसका तनाव कम होता है और वह अपने लक्ष्य
+                को जल्दी प्राप्त कर सकता है।
+
+            </p>
+
+        </div>
+
+        <!-- BENEFITS -->
+
+        <div class="about-section">
+
+            <h2>
+
+                <i class="fa-solid fa-star"></i>
+
+                लाइब्रेरी के लाभ
+
+            </h2>
+
+            <div class="benefits">
+
+                <div class="benefit-card">
+
+                    <h3>📖 शांत वातावरण</h3>
+
+                    <p>
+                        पढ़ाई के लिए शांत और अनुशासित माहौल।
+                    </p>
+
+                </div>
+
+                <div class="benefit-card">
+
+                    <h3>🎯 बेहतर फोकस</h3>
+
+                    <p>
+                        एकाग्रता और पढ़ाई की क्षमता में वृद्धि।
+                    </p>
+
+                </div>
+
+                <div class="benefit-card">
+
+                    <h3>⏰ समय की बचत</h3>
+
+                    <p>
+                        नियमित अध्ययन और सही समय प्रबंधन।
+                    </p>
+
+                </div>
+
+                <div class="benefit-card">
+
+                    <h3>🏆 सफलता की तैयारी</h3>
+
+                    <p>
+                        प्रतियोगी परीक्षाओं की बेहतर तैयारी।
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- QUOTE -->
+
+        <div class="quote-box">
+
+            <h2>
+
+                🌟 हमारा उद्देश्य
+
+            </h2>
+
+            <p>
+
+                “हर विद्यार्थी को एक ऐसा शांत और प्रेरणादायक
+                अध्ययन वातावरण प्रदान करना जहाँ वह अपने सपनों
+                को साकार कर सके।”
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:linear-gradient(135deg,#1e3c72,#2a5298);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:30px;
+        }
+
+        .register-box{
+            width:550px;
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .register-box h2{
+            text-align:center;
+            margin-bottom:30px;
+            color:#1e3c72;
+        }
+
+        .input-box{
+            margin-bottom:18px;
+        }
+
+        .input-box label{
+            display:block;
+            margin-bottom:8px;
+            font-weight:bold;
+            color:#333;
+        }
+
+        .input-box input,
+        .input-box select,
+        .input-box textarea{
+            width:100%;
+            padding:14px;
+            border:1px solid #ccc;
+            border-radius:10px;
+            font-size:15px;
+        }
+
+        .register-btn{
+            width:100%;
+            padding:15px;
+            background:#1e3c72;
+            color:white;
+            border:none;
+            border-radius:10px;
+            font-size:18px;
+            cursor:pointer;
+            transition:0.3s;
+            margin-top:10px;
+        }
+
+        .register-btn:hover{
+            background:#2a5298;
+            transform:scale(1.02);
+        }
+
+        .login-link{
+            text-align:center;
+            margin-top:20px;
+        }
+
+        .login-link a{
+            text-decoration:none;
+            color:#1e3c72;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="register-box">
+
+    <h2>🎓 Student Registration</h2>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <div class="input-box">
+            <label>Full Name</label>
+            <input type="text"
+                   name="fullname"
+                   placeholder="Enter Full Name"
+                   required>
+        </div>
+
+        <div class="input-box">
+            <label>Username</label>
+            <input type="text"
+                   name="username"
+                   placeholder="Enter Username"
+                   required>
+        </div>
+
+        <div class="input-box">
+            <label>Email Address</label>
+            <input type="email"
+                   name="email"
+                   placeholder="Enter Email Address"
+                   required>
+        </div>
+
+        <div class="input-box">
+            <label>Mobile Number</label>
+            <input type="text"
+                   name="mobile"
+                   placeholder="Enter Mobile Number"
+                   required>
+        </div>
+
+        <div class="input-box">
+            <label>Date of Birth</label>
+            <input type="date"
+                   name="dob"
+                   required>
+        </div>
+
+        <div class="input-box">
+            <label>Gender</label>
+
+            <select name="gender">
+
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+
+            </select>
+        </div>
+
+        <div class="input-box">
+            <label>Current Address</label>
+
+            <textarea name="current_address"
+                      rows="3"
+                      placeholder="Enter Current Address"></textarea>
+        </div>
+
+        <div class="input-box">
+            <label>Permanent Address</label>
+
+            <textarea name="permanent_address"
+                      rows="3"
+                      placeholder="Enter Permanent Address"></textarea>
+        </div>
+
+        <div class="input-box">
+            <label>Create Password</label>
+
+            <input type="password"
+                   name="password"
+                   placeholder="Create Password"
+                   required>
+        </div>
+
+        <div class="input-box">
+            <label>Confirm Password</label>
+
+            <input type="password"
+                   name="confirm_password"
+                   placeholder="Confirm Password"
+                   required>
+        </div>
+
+        <button type="submit" class="register-btn">
+            Register Now
+        </button>
+
+    </form>
+
+    <div class="login-link">
+        Already have an account?
+        <a href="/login/">Login</a>
+    </div>
+
+</div>
+
+</body>
+</html>

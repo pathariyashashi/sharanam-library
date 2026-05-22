@@ -1,0 +1,431 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Library Rules</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+
+            font-family:Arial,sans-serif;
+
+            background:#f4f7fb;
+
+            overflow-x:hidden;
+        }
+
+        /* BACKGROUND LOGO */
+
+        .bg-logo{
+
+            position:fixed;
+
+            top:50%;
+
+            left:50%;
+
+            transform:translate(-50%,-50%);
+
+            width:500px;
+
+            opacity:0.06;
+
+            z-index:-1;
+        }
+
+        /* PAGE */
+
+        .rules-page{
+
+            padding:40px 6%;
+        }
+
+        .rules-title{
+
+            text-align:center;
+
+            font-size:55px;
+
+            font-weight:bold;
+
+            color:#031b4e;
+
+            margin-bottom:10px;
+        }
+
+        .rules-sub{
+
+            text-align:center;
+
+            font-size:22px;
+
+            color:#555;
+
+            margin-bottom:40px;
+        }
+
+        /* RULE CARD */
+
+        .rule-card{
+
+            background:white;
+
+            padding:30px;
+
+            border-radius:22px;
+
+            margin-bottom:25px;
+
+            box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+            border-left:8px solid #ff8800;
+
+            transition:0.3s;
+        }
+
+        .rule-card:hover{
+
+            transform:translateY(-5px);
+        }
+
+        .rule-head{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:20px;
+
+            margin-bottom:20px;
+        }
+
+        .rule-icon{
+
+            width:70px;
+
+            height:70px;
+
+            background:#fff3e0;
+
+            border-radius:50%;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            font-size:32px;
+
+            color:#ff8800;
+        }
+
+        .rule-head h2{
+
+            font-size:32px;
+
+            color:#031b4e;
+
+            margin:0;
+        }
+
+        .rule-card p{
+
+            font-size:22px;
+
+            line-height:40px;
+
+            color:#444;
+        }
+
+        /* IMPORTANT */
+
+        .important-box{
+
+            background:#031b4e;
+
+            color:white;
+
+            padding:35px;
+
+            border-radius:25px;
+
+            margin-top:40px;
+
+            text-align:center;
+        }
+
+        .important-box h2{
+
+            color:#ffb347;
+
+            margin-bottom:20px;
+
+            font-size:38px;
+        }
+
+        .important-box p{
+
+            font-size:24px;
+
+            line-height:42px;
+        }
+
+        /* BUTTON */
+
+        .back-btn{
+
+            display:inline-block;
+
+            margin-top:35px;
+
+            background:#0d6efd;
+
+            color:white;
+
+            padding:14px 35px;
+
+            border-radius:12px;
+
+            text-decoration:none;
+
+            font-size:20px;
+
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+{% include 'library/navbar.html' %}
+
+<!-- BACKGROUND LOGO -->
+
+<img src="{% static 'images/logo.jpg' %}"
+class="bg-logo">
+
+<section class="rules-page">
+
+    <h1 class="rules-title">
+
+        📖 लाइब्रेरी नियम
+
+    </h1>
+
+    <p class="rules-sub">
+
+        अनुशासन • समय प्रबंधन • शांत अध्ययन वातावरण
+
+    </p>
+
+    <!-- RULE 1 -->
+
+    <div class="rule-card">
+
+        <div class="rule-head">
+
+            <div class="rule-icon">
+
+                <i class="fa-solid fa-user-plus"></i>
+
+            </div>
+
+            <h2>
+
+                प्रवेश एवं पंजीकरण
+
+            </h2>
+
+        </div>
+
+        <p>
+
+            लाइब्रेरी में प्रवेश लेने हेतु प्रत्येक विद्यार्थी को
+            पहले आवेदन एवं पंजीकरण करना आवश्यक है।
+            सही जानकारी देना अनिवार्य है ताकि भविष्य में किसी
+            प्रकार की समस्या न हो।
+
+        </p>
+
+    </div>
+
+    <!-- RULE 2 -->
+
+    <div class="rule-card">
+
+        <div class="rule-head">
+
+            <div class="rule-icon">
+
+                <i class="fa-solid fa-clock"></i>
+
+            </div>
+
+            <h2>
+
+                समय स्लॉट बुकिंग
+
+            </h2>
+
+        </div>
+
+        <p>
+
+            प्रत्येक विद्यार्थी को अध्ययन के लिए अपना समय स्लॉट
+            पहले से बुक करना होगा। स्लॉट 2, 4, 6, 8, 10 या
+            12 घंटे का हो सकता है। समय का पालन करना आवश्यक है।
+
+        </p>
+
+    </div>
+
+    <!-- RULE 3 -->
+
+    <div class="rule-card">
+
+        <div class="rule-head">
+
+            <div class="rule-icon">
+
+                <i class="fa-solid fa-calendar-xmark"></i>
+
+            </div>
+
+            <h2>
+
+                अनुपस्थिति नियम
+
+            </h2>
+
+        </div>
+
+        <p>
+
+            यदि कोई विद्यार्थी लगातार 5 दिनों तक अनुपस्थित रहता है,
+            तो उसे पहले से सूचना देना आवश्यक है।
+            बिना सूचना अनुपस्थित रहने पर विद्यार्थी को डिफॉल्ट माना जाएगा।
+
+        </p>
+
+    </div>
+
+    <!-- RULE 4 -->
+
+    <div class="rule-card">
+
+        <div class="rule-head">
+
+            <div class="rule-icon">
+
+                <i class="fa-solid fa-volume-xmark"></i>
+
+            </div>
+
+            <h2>
+
+                शांत वातावरण बनाए रखें
+
+            </h2>
+
+        </div>
+
+        <p>
+
+            लाइब्रेरी में अनुशासन एवं शांत वातावरण बनाए रखना
+            सभी विद्यार्थियों की जिम्मेदारी है।
+            मोबाइल पर बात करना, शोर करना या दूसरों को disturb करना मना है।
+
+        </p>
+
+    </div>
+
+    <!-- RULE 5 -->
+
+    <div class="rule-card">
+
+        <div class="rule-head">
+
+            <div class="rule-icon">
+
+                <i class="fa-solid fa-ban"></i>
+
+            </div>
+
+            <h2>
+
+                लगातार डिफॉल्ट
+
+            </h2>
+
+        </div>
+
+        <p>
+
+            यदि कोई विद्यार्थी लगातार तीन बार डिफॉल्ट होता है,
+            तो उसकी लाइब्रेरी सुविधा समाप्त की जा सकती है।
+            अनुशासन बनाए रखना सभी के लिए आवश्यक है।
+
+        </p>
+
+    </div>
+
+    <!-- IMPORTANT -->
+
+    <div class="important-box">
+
+        <h2>
+
+            🌟 महत्वपूर्ण संदेश
+
+        </h2>
+
+        <p>
+
+            “शांत वातावरण, सही समय प्रबंधन और नियमित अध्ययन
+            ही सफलता की सबसे मजबूत कुंजी है।
+            शारणम् लाइब्रेरी आपका भविष्य बेहतर बनाने के लिए
+            समर्पित है।”
+
+        </p>
+
+    </div>
+
+    <center>
+
+        <a href="/" class="back-btn">
+
+            ← Back To Home
+
+        </a>
+
+    </center>
+
+</section>
+
+</body>
+
+</html>

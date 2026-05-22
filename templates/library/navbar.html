@@ -1,0 +1,136 @@
+{% load static %}
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.navbar{
+
+    width:100%;
+
+    background: linear-gradient(90deg, #0f4cbd, #00c6ff);
+
+    padding:15px 40px;
+
+    min-height:85px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+}
+
+.logo-section{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+.logo-section img{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:white;
+
+    padding:3px;
+}
+
+.logo-text h2{
+
+    color:#ffcc99;
+
+    font-size:30px;
+
+    margin:0;
+}
+
+.logo-text p{
+
+    color:white;
+
+    font-size:16px;
+
+    margin:0;
+}
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:18px;
+    font-weight:bold;
+}
+.nav-links a:hover{
+
+    color:#ffe082;
+
+    transform:scale(1.08);
+}
+
+body{
+
+    overflow-x:hidden;
+}
+
+</style>
+
+<nav class="navbar">
+
+    <div class="logo-section">
+
+        <img src="{% static 'images/logo.jpg' %}" alt="logo">
+
+        <div class="logo-text">
+
+            <h2>शारणम्</h2>
+
+            <p>Sitting Library</p>
+
+        </div>
+
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/about/">About</a>
+
+        <a href="/address/">Address</a>
+
+        <a href="/gallery/">Gallery</a>
+
+        <a href="/updates/">Updates</a>
+
+        <a href="/rules/">Rules</a>
+
+    </div>
+
+</nav>
