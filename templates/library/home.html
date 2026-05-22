@@ -336,15 +336,12 @@ body{
 
 .hero{
 
-    padding:60px 6%;
+    padding:40px 5%;
 
-    display:flex;
+    max-width:1200px;
 
-    align-items:center;
-
-    gap:30px;
+    margin:auto;
 }
-
 /* TITLE */
 
 .hero-title{
@@ -357,21 +354,26 @@ body{
 
 /* IMAGE */
 
-.hero img{
+.hero-image{
 
     width:100%;
 
-    max-width:650px;
-
-    height:420px;
+    height:230px;
 
     object-fit:cover;
 
-    border-radius:14px;
+    border-radius:12px;
 
     display:block;
+}
 
-    margin:auto;
+.image-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:10px;
 }
 /* ABOUT */
 
@@ -609,6 +611,21 @@ img{
     }
 
 }
+
+@media(max-width:768px){
+
+    .hero{
+
+        padding:25px 18px;
+    }
+
+    .hero-image{
+
+        height:170px;
+    }
+
+}
+
     </style>
 
 </head>
