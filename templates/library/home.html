@@ -335,7 +335,14 @@ body{
 /* HERO */
 
 .hero{
-    padding:40px 5%;
+
+    padding:60px 6%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
 }
 
 /* TITLE */
@@ -350,11 +357,21 @@ body{
 
 /* IMAGE */
 
-.hero-image{
-    width: 650px;
-    height: 420px;
-    object-fit: cover;
-    border-radius: 12px;
+.hero img{
+
+    width:100%;
+
+    max-width:650px;
+
+    height:420px;
+
+    object-fit:cover;
+
+    border-radius:14px;
+
+    display:block;
+
+    margin:auto;
 }
 /* ABOUT */
 
@@ -489,9 +506,82 @@ img{
     margin-top:40px;
 }
 
+/* HAMBURGER MENU */
+
+.menu-btn{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:32px;
+}
+
+/* MOBILE MENU */
+
+.mobile-menu{
+
+    display:flex;
+
+    gap:15px;
+}
+
+@media(max-width:768px){
+
+    .menu-btn{
+
+        display:block;
+    }
+
+    .mobile-menu{
+
+        display:none;
+
+        flex-direction:column;
+
+        width:100%;
+
+        background:#031b4e;
+
+        margin-top:15px;
+
+        padding:15px;
+
+        border-radius:12px;
+    }
+
+    .mobile-menu a{
+
+        text-align:center;
+
+        padding:10px;
+    }
+
+    .mobile-menu.show{
+
+        display:flex;
+    }
+
+}
     </style>
 
 </head>
+
+<script>
+
+function toggleMenu(){
+
+    document.getElementById("mobileMenu")
+
+    .classList.toggle("show");
+
+}
+
+</script>
 
 <body>
 
@@ -518,28 +608,27 @@ img{
 
         <div>
 
-            <a class="nav-link d-inline" href="#">Home</a>
+           <button class="menu-btn" onclick="toggleMenu()">
 
-            <a class="nav-link d-inline" href="/about/">
-    About
-            </a>
+    ☰
 
-           <a class="nav-link d-inline" href="/address/">
-    Address
-</a>
+</button>
 
-            <a class="nav-link d-inline" href="/gallery/">
-               Gallery
-            </a>
+<div class="mobile-menu" id="mobileMenu">
 
-            <a class="nav-link d-inline" href="/updates/">
-               Updates
-            </a>
+    <a class="nav-link" href="#">Home</a>
 
-           <a class="nav-link d-inline" href="/rules/">
-    Rules
-</a>
+    <a class="nav-link" href="/about/">About</a>
 
+    <a class="nav-link" href="/address/">Address</a>
+
+    <a class="nav-link" href="/gallery/">Gallery</a>
+
+    <a class="nav-link" href="/updates/">Updates</a>
+
+    <a class="nav-link" href="/rules/">Rules</a>
+
+</div>
         </div>
 
         <a href="/dashboard/" class="dashboard-btn">
