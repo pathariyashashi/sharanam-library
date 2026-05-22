@@ -438,6 +438,54 @@ body{
     overflow-x:hidden;
 }
 
+html, body{
+    width:100%;
+    overflow-x:hidden !important;
+    margin:0;
+    padding:0;
+}
+
+.container,
+.container-fluid,
+.row{
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100% !important;
+    height:auto;
+    display:block;
+}
+
+.hero img,
+.gallery img{
+    width:100% !important;
+    object-fit:cover;
+}
+
+@media(max-width:768px){
+
+    body{
+        overflow-x:hidden !important;
+    }
+
+    .hero,
+    .about-section,
+    .info-section,
+    .container,
+    .container-fluid{
+        padding-left:12px !important;
+        padding-right:12px !important;
+    }
+
+    .row{
+        --bs-gutter-x:0 !important;
+    }
+}
+
     </style>
 
 </head>
