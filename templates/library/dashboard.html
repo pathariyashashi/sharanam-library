@@ -15,11 +15,15 @@
 body{
     margin:0;
     padding:0;
-
-    background: linear-gradient(135deg, #b9cef5, #fdfeff);
-
+    overflow-x:hidden;
+    background:#eef2ff;
     min-height:100vh;
-    font-family: Arial, sans-serif;
+    font-family:Arial,sans-serif;
+}
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
 }
 /* TOP SECTION */
 
@@ -325,175 +329,127 @@ body{
 
 @media(max-width:768px){
 
+    *{
+        max-width:100%;
+    }
+
     body{
-        background:#eef3ff;
+        overflow-x:hidden;
+    }
+
+    .navbar{
+        padding:15px;
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        gap:12px;
+    }
+
+    .logo-section{
+        flex-direction:column;
+        gap:8px;
+    }
+
+    .logo-section img{
+        width:55px;
+        height:55px;
+    }
+
+    .logo-text h2{
+        font-size:24px;
+    }
+
+    .logo-text p{
+        font-size:14px;
+    }
+
+    .nav-links{
+        width:100%;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+    }
+
+    .nav-links a{
+        margin:0;
+        font-size:15px;
     }
 
     .top-section{
-
         flex-direction:column;
-
         padding:15px;
-
         gap:20px;
-
-        align-items:center;
     }
 
     .library-box,
     .center-box,
     .profile-box{
-
         width:100%;
     }
 
     .library-box h1{
-
-        font-size:34px;
-
+        font-size:36px;
         line-height:45px;
-
         text-align:center;
     }
 
     .welcome-box{
-
         width:100%;
-
-        text-align:center;
-
         font-size:22px;
-
         padding:15px;
-
-        border-radius:15px;
+        text-align:center;
     }
 
     .entry-exit-buttons{
-
         flex-direction:column;
-
         width:100%;
-
-        gap:15px;
     }
 
     .entry-btn,
     .exit-btn{
-
         width:100%;
-
         min-width:100%;
-
-        padding:18px;
-    }
-
-    .btn-title{
-
-        font-size:24px;
-    }
-
-    .btn-time{
-
-        font-size:18px;
-    }
-
-    .btn-status{
-
-        font-size:15px;
-    }
-
-    .profile-box{
-
-        padding:18px;
-
-        border-radius:18px;
-    }
-
-    .profile-box h2{
-
-        text-align:center;
-
-        font-size:24px;
-    }
-
-    .profile-box p{
-
-        font-size:16px;
-
-        line-height:24px;
-    }
-
-    .profile-buttons{
-
-        flex-direction:column;
-
-        gap:12px;
-    }
-
-    .edit-btn,
-    .logout-btn{
-
-        width:100%;
-
-        text-align:center;
-
-        padding:14px;
+        padding:16px;
     }
 
     .cards-container{
-
         grid-template-columns:1fr;
-
         padding:15px;
-
-        gap:15px;
     }
 
     .card{
-
         width:100%;
-
         padding:18px;
-
-        border-radius:16px;
     }
 
     .card h3{
-
         font-size:24px;
     }
 
     .card p{
-
-        font-size:17px;
-
+        font-size:16px;
         line-height:28px;
     }
 
     .notification-card{
-
         grid-column:span 1;
     }
 
-    .notification-card li{
-
-        font-size:16px;
+    img{
+        max-width:100%;
+        height:auto;
     }
 
-    a[href="/attendance-history/"],
-    a[href="/seat-booking/"]{
-
-        width:100% !important;
-
-        font-size:18px !important;
-
-        padding:15px !important;
+    .gallery img,
+    .photos img,
+    .image-box img{
+        width:100%;
+        height:auto;
+        object-fit:cover;
     }
 
 }
-
-
     </style>
 
 
