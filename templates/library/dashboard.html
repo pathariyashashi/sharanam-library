@@ -325,14 +325,19 @@ body{
 
 @media(max-width:768px){
 
+    body{
+        background:#eef3ff;
+    }
+
     .top-section{
 
         flex-direction:column;
 
+        padding:15px;
+
         gap:20px;
 
-        padding:20px;
-
+        align-items:center;
     }
 
     .library-box,
@@ -340,53 +345,150 @@ body{
     .profile-box{
 
         width:100%;
+    }
 
+    .library-box h1{
+
+        font-size:34px;
+
+        line-height:45px;
+
+        text-align:center;
+    }
+
+    .welcome-box{
+
+        width:100%;
+
+        text-align:center;
+
+        font-size:22px;
+
+        padding:15px;
+
+        border-radius:15px;
     }
 
     .entry-exit-buttons{
 
         flex-direction:column;
 
-        gap:15px;
+        width:100%;
 
+        gap:15px;
+    }
+
+    .entry-btn,
+    .exit-btn{
+
+        width:100%;
+
+        min-width:100%;
+
+        padding:18px;
+    }
+
+    .btn-title{
+
+        font-size:24px;
+    }
+
+    .btn-time{
+
+        font-size:18px;
+    }
+
+    .btn-status{
+
+        font-size:15px;
+    }
+
+    .profile-box{
+
+        padding:18px;
+
+        border-radius:18px;
+    }
+
+    .profile-box h2{
+
+        text-align:center;
+
+        font-size:24px;
+    }
+
+    .profile-box p{
+
+        font-size:16px;
+
+        line-height:24px;
+    }
+
+    .profile-buttons{
+
+        flex-direction:column;
+
+        gap:12px;
+    }
+
+    .edit-btn,
+    .logout-btn{
+
+        width:100%;
+
+        text-align:center;
+
+        padding:14px;
     }
 
     .cards-container{
 
         grid-template-columns:1fr;
 
-    }
-
-    .navbar{
-
-        flex-direction:column;
+        padding:15px;
 
         gap:15px;
-
-        text-align:center;
-
-    }
-
-    .nav-links{
-
-        flex-wrap:wrap;
-
-        justify-content:center;
-
-    }
-
-    .nav-links a{
-
-        margin:10px;
-
-        font-size:16px;
-
     }
 
     .card{
 
         width:100%;
 
+        padding:18px;
+
+        border-radius:16px;
+    }
+
+    .card h3{
+
+        font-size:24px;
+    }
+
+    .card p{
+
+        font-size:17px;
+
+        line-height:28px;
+    }
+
+    .notification-card{
+
+        grid-column:span 1;
+    }
+
+    .notification-card li{
+
+        font-size:16px;
+    }
+
+    a[href="/attendance-history/"],
+    a[href="/seat-booking/"]{
+
+        width:100% !important;
+
+        font-size:18px !important;
+
+        padding:15px !important;
     }
 
 }
