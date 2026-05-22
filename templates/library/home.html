@@ -1,4 +1,18 @@
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sharanam Library</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
 
@@ -8,295 +22,559 @@
     box-sizing:border-box;
 }
 
-body{
-    background:#f4f6fb;
+html,body{
     overflow-x:hidden;
-    font-family:Arial,sans-serif;
+    width:100%;
 }
 
-/* MAIN CONTAINER */
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f7fb;
+}
 
-.home-container{
-    width:100%;
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
+/* NAVBAR */
+
+.navbar-custom{
+
+    background:#031b4e;
+
+    padding:15px 60px;
+}
+
+.logo-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.logo-img{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:white;
+
+    padding:5px;
+}
+
+.brand-text h2{
+
+    color:#ff8800;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    margin:0;
+}
+
+.brand-text h3{
+
+    color:white;
+
+    font-size:34px;
+
+    margin:0;
+}
+
+.nav-link{
+
+    color:white !important;
+
+    margin:0 15px;
+
+    font-size:18px;
+
+    font-weight:500;
+}
+
+.nav-link:hover{
+
+    color:#ffb347 !important;
+}
+
+.dashboard-btn{
+
+    background:#3cb043;
+
+    color:white;
+
+    padding:12px 28px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    font-weight:bold;
 }
 
 /* HERO */
 
 .hero{
+
+    padding:70px 8%;
+}
+
+.hero-title{
+
+    font-size:72px;
+
+    font-weight:800;
+}
+
+.orange{
+    color:#ff8800;
+}
+
+.blue{
+    color:#031b4e;
+}
+
+.hero-sub{
+
+    font-size:30px;
+
     margin-top:20px;
-}
 
-.hero h1{
-    font-size:58px;
-    color:#001b5e;
-    font-weight:bold;
-}
-
-.hero h1 span{
-    color:#ff9800;
-}
-
-.hero p{
-    margin-top:10px;
-    font-size:22px;
     color:#555;
 }
 
-/* BUTTONS */
+.hero-btns{
 
-.hero-buttons{
-    margin-top:25px;
+    margin-top:35px;
+
     display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-}
 
-.hero-buttons a{
-    text-decoration:none;
-    padding:14px 40px;
-    border-radius:12px;
-    color:white;
-    font-size:20px;
-    font-weight:bold;
+    gap:20px;
 }
 
 .login-btn{
-    background:#1877f2;
+
+    background:#0d6efd;
+
+    color:white;
+
+    padding:14px 45px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    font-weight:bold;
 }
 
 .register-btn{
+
     background:#ff9800;
-}
 
-/* GALLERY */
+    color:white;
 
-.gallery{
-    margin-top:25px;
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-}
+    padding:14px 45px;
 
-.gallery img{
-    width:100%;
-    height:260px;
-    object-fit:cover;
     border-radius:12px;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    font-weight:bold;
 }
 
-/* CARDS */
+/* HERO IMAGE FINAL FIX */
 
-.info-section{
-    margin-top:35px;
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
-}
+.hero img{
 
-.card{
-    background:white;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.08);
-}
-
-.card h2{
-    margin-bottom:15px;
-    color:#001b5e;
-}
-
-.card ul{
-    padding-left:20px;
-}
-
-.card li{
-    margin-bottom:12px;
-    line-height:1.6;
-    color:#444;
-}
-
-/* FOOT */
-
-.footer-box{
-    margin-top:40px;
-    background:#e8ecff;
-    padding:20px;
-    border-radius:18px;
-    text-align:center;
-    font-size:24px;
-    color:#444;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .home-container{
-        padding:12px;
-    }
-
-    .hero h1{
-        font-size:42px;
-        line-height:1.2;
-    }
-
-    .hero p{
-        font-size:18px;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-    }
-
-    .hero-buttons a{
-        width:100%;
-        text-align:center;
-        font-size:18px;
-        padding:14px;
-    }
-
-    .gallery{
-        grid-template-columns:1fr;
-        gap:8px;
-    }
-
-    .gallery img{
-        width:100%;
-        height:190px;
-        object-fit:cover;
-        border-radius:10px;
-    }
-
-    .info-section{
-        grid-template-columns:1fr;
-    }
-
-    .card{
-        padding:18px;
-    }
-
-    .footer-box{
-        font-size:18px;
-        padding:16px;
-    }
-
-}
-@media(max-width:768px){
-
-    body{
-        overflow-x:hidden !important;
-    }
-
-    img{
-        max-width:100% !important;
-        height:auto !important;
-    }
-
-    .hero img{
     width:100%;
+
     max-width:750px;
+
     height:auto;
+
     object-fit:cover;
-    border-radius:10px;
+
+    border-radius:12px;
+
     display:block;
+
     margin:auto;
 }
 
-    .container,
-    .container-fluid,
-    .row,
-    .col-md-6,
-    .cards-container,
-    .top-section{
+/* ABOUT */
+
+.about-section{
+
+    padding:20px 6% 40px;
+}
+
+.about-card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+    height:100%;
+}
+
+.about-card h3{
+
+    margin-bottom:20px;
+
+    color:#111827;
+
+    font-size:34px;
+}
+
+.about-card p,
+.about-card li{
+
+    font-size:22px;
+
+    line-height:40px;
+
+    color:#444;
+}
+
+.about-card ul{
+
+    padding-left:20px;
+}
+
+.green{
+
+    color:green;
+
+    font-weight:bold;
+}
+
+/* RULES */
+
+.rules-section{
+
+    padding:20px 6% 70px;
+}
+
+.rules-title{
+
+    text-align:center;
+
+    font-size:50px;
+
+    font-weight:bold;
+
+    color:#031b4e;
+
+    margin-bottom:40px;
+}
+
+.rules-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:20px;
+}
+
+.rule-box{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+    transition:0.3s;
+}
+
+.rule-box:hover{
+
+    transform:translateY(-6px);
+}
+
+.rule-box i{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+}
+
+.rule-box h4{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    line-height:35px;
+}
+
+/* FOOTER */
+
+.bottom-text{
+
+    text-align:center;
+
+    margin-top:40px;
+
+    font-size:26px;
+
+    color:#444;
+
+    background:#eef3ff;
+
+    padding:18px;
+
+    border-radius:40px;
+}
+
+/* MOBILE FINAL FIX */
+
+@media(max-width:768px){
+
+    html,body{
+        overflow-x:hidden !important;
+    }
+
+    .navbar-custom{
+
+        padding:15px !important;
+
+        text-align:center;
+    }
+
+    .container-fluid{
+
+        flex-direction:column;
+
+        gap:15px;
+    }
+
+    .logo-box{
+
+        flex-direction:column;
+
+        justify-content:center;
+    }
+
+    .logo-img{
+
+        width:55px;
+
+        height:55px;
+    }
+
+    .brand-text h2{
+
+        font-size:30px;
+    }
+
+    .brand-text h3{
+
+        font-size:22px;
+    }
+
+    .nav-link{
+
+        display:inline-block;
+
+        margin:5px !important;
+
+        font-size:15px;
+    }
+
+    .dashboard-btn{
+
+        width:100%;
+
+        text-align:center;
+
+        margin-top:10px;
+    }
+
+    /* HERO */
+
+    .hero{
+
+        padding:25px 15px;
+    }
+
+    .hero-title{
+
+        font-size:42px;
+
+        line-height:55px;
+    }
+
+    .hero-sub{
+
+        font-size:18px;
+
+        line-height:32px;
+    }
+
+    .hero-btns{
+
+        flex-direction:column;
+
+        gap:15px;
+    }
+
+    .login-btn,
+    .register-btn{
+
+        width:100%;
+
+        text-align:center;
+
+        font-size:18px;
+
+        padding:14px;
+    }
+
+    .hero img{
+
         width:100% !important;
-        margin:0 !important;
-        padding-left:10px !important;
-        padding-right:10px !important;
+
+        max-width:100% !important;
+
+        margin-top:20px;
+    }
+
+    /* ABOUT */
+
+    .about-section{
+
+        padding:15px;
+    }
+
+    .about-card{
+
+        padding:20px;
+
+        margin-bottom:15px;
+    }
+
+    .about-card h3{
+
+        font-size:24px;
+    }
+
+    .about-card p,
+    .about-card li{
+
+        font-size:17px;
+
+        line-height:30px;
+    }
+
+    /* RULES */
+
+    .rules-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:12px;
+    }
+
+    .rule-box{
+
+        padding:20px 10px;
+    }
+
+    .rule-box i{
+
+        font-size:38px;
+    }
+
+    .rule-box h4{
+
+        font-size:16px;
+
+        line-height:24px;
+    }
+
+    .rules-title{
+
+        font-size:36px;
+    }
+
+    .bottom-text{
+
+        font-size:18px;
+
+        padding:15px;
+
+        border-radius:20px;
     }
 
 }
 
 </style>
 
-<div class="home-container">
+</head>
 
-    <!-- HERO -->
+<body>
 
-    <div class="hero">
+<!-- NAVBAR -->
 
-        <h1><span>शारणम्</span> लाइब्रेरी</h1>
+<nav class="navbar navbar-expand-lg navbar-custom">
 
-        <p>
-            अध्ययन की उत्तम व्यवस्था, सफलता की ओर आपका कदम।
-        </p>
+    <div class="container-fluid">
 
-        <div class="hero-buttons">
+        <div class="logo-box">
 
-            <a href="/login/" class="login-btn">👤 Login</a>
+            <img src="{% static 'images/logo.jpg' %}"
+            class="logo-img">
 
-            <a href="/register/" class="register-btn">➕ Register</a>
+            <div class="brand-text">
 
-        </div>
+                <h2>शारणम्</h2>
 
-    </div>
+                <h3>Sitting Library</h3>
 
-    <!-- GALLERY -->
-
-    <div class="gallery">
-
-        <img src="{% static 'images/lib.jpg' %}" alt="library">
-
-        <img src="{% static 'images/lib2.jpg' %}" alt="library">
-
-        <img src="{% static 'images/myqr.png' %}" alt="library">
-
-        <img src="{% static 'images/logo.jpg' %}" alt="library">
-
-    </div>
-
-    <!-- INFO -->
-
-    <div class="info-section">
-
-        <div class="card">
-
-            <h2>💡 Remember</h2>
-
-            <ul>
-                <li>प्रवेश लेने हेतु आवेदन करना आवश्यक है।</li>
-                <li>समय स्लॉट पहले से बुक करना होगा।</li>
-                <li>5 दिन अनुपस्थित रहने पर सूचना देना आवश्यक है।</li>
-                <li>लाइब्रेरी में अनुशासन एवं शांत वातावरण बनाए रखें।</li>
-            </ul>
+            </div>
 
         </div>
 
-        <div class="card">
+        <div>
 
-            <h2>📚 Facilities</h2>
+            <a class="nav-link d-inline" href="#">Home</a>
 
-            <ul>
-                <li>Silent Study Zone</li>
-                <li>WiFi Facility</li>
-                <li>Comfortable Seating</li>
-                <li>CCTV Security</li>
-                <li>AC Room</li>
-                <li>Pure Water</li>
-            </ul>
+            <a class="nav-link d-inline" href="/about/">About</a>
+
+            <a class="nav-link d-inline" href="/address/">Address</a>
+
+            <a class="nav-link d-inline" href="/gallery/">Gallery</a>
+
+            <a class="nav-link d-inline" href="/updates/">Updates</a>
+
+            <a class="nav-link d-inline" href="/rules/">Rules</a>
 
         </div>
 
+        <a href="/dashboard/" class="dashboard-btn">
+
+            <i class="fa-solid fa-user"></i>
+
+            Students Dashboard
+
+        </a>
+
     </div>
 
-    <!-- FOOTER -->
-
-    <div class="footer-box">
-
-        Let's make this a better place to study and grow together ❤️
-
-    </div>
-
-</div>
+</nav>
