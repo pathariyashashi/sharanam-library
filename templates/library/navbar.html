@@ -16,16 +16,15 @@ body{
 
 .navbar{
     width:100%;
-    background: linear-gradient(90deg, #0f4cbd, #00c6ff);
-    padding:15px 40px;
-    min-height:85px;
+    background:#031b4e;
+    padding:12px 20px;
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
     position:sticky;
     top:0;
     z-index:999;
-    flex-wrap:wrap;
 }
 
 /* LOGO */
@@ -33,27 +32,29 @@ body{
 .logo-section{
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:10px;
 }
 
 .logo-section img{
-    width:65px;
-    height:65px;
+    width:55px;
+    height:55px;
     border-radius:50%;
     background:white;
     padding:3px;
 }
 
 .logo-text h2{
-    color:#ffcc99;
-    font-size:30px;
+    color:#ff9900;
+    font-size:28px;
     margin:0;
+    line-height:1;
 }
 
 .logo-text p{
     color:white;
     font-size:16px;
     margin:0;
+    font-weight:bold;
 }
 
 /* LINKS */
@@ -61,40 +62,43 @@ body{
 .nav-links{
     display:flex;
     align-items:center;
-    gap:25px;
+    gap:22px;
     flex-wrap:wrap;
 }
 
 .nav-links a{
     color:white;
     text-decoration:none;
-    font-size:18px;
+    font-size:17px;
     font-weight:bold;
     transition:0.3s;
 }
 
 .nav-links a:hover{
-    color:#ffe082;
-    transform:scale(1.08);
+    color:#ffd166;
 }
 
-/* MOBILE RESPONSIVE */
+/* MOBILE */
 
 @media(max-width:768px){
 
     .navbar{
         flex-direction:column;
-        text-align:center;
-        padding:20px;
-        gap:15px;
+        align-items:flex-start;
+        padding:15px;
     }
 
     .logo-section{
-        flex-direction:column;
+        width:100%;
+    }
+
+    .logo-section img{
+        width:48px;
+        height:48px;
     }
 
     .logo-text h2{
-        font-size:26px;
+        font-size:24px;
     }
 
     .logo-text p{
@@ -102,18 +106,21 @@ body{
     }
 
     .nav-links{
-        justify-content:center;
-        gap:15px;
+        width:100%;
+        margin-top:15px;
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:12px;
+        text-align:center;
     }
 
     .nav-links a{
-        font-size:16px;
+        background:rgba(255,255,255,0.08);
+        padding:10px 5px;
+        border-radius:10px;
+        font-size:15px;
     }
 
-    .logo-section img{
-        width:55px;
-        height:55px;
-    }
 }
 
 </style>
