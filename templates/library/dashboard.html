@@ -633,6 +633,160 @@ body{
 }
 }
 
+@media(max-width:768px){
+
+/* desktop navbar hide */
+
+.navbar{
+
+    display:none !important;
+}
+
+/* mobile topbar */
+
+.mobile-topbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 16px;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.menu-btn{
+
+    border:none;
+    background:none;
+    font-size:32px;
+    color:#111;
+}
+
+.mobile-logo{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.mobile-logo img{
+
+    width:45px;
+    height:45px;
+    border-radius:50%;
+}
+
+.mobile-logo h3{
+
+    margin:0;
+    font-size:20px;
+    color:#0a2a7a;
+}
+
+.mobile-logo p{
+
+    margin:0;
+    font-size:13px;
+}
+
+/* top section */
+
+.top-section{
+
+    flex-direction:column;
+    padding:15px;
+}
+
+/* hide left library text */
+
+.library-box{
+
+    display:none;
+}
+
+/* welcome */
+
+.welcome-box{
+
+    border-radius:20px;
+    font-size:28px;
+    padding:25px;
+}
+
+/* entry exit */
+
+.entry-exit-buttons{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.entry-btn,
+.exit-btn{
+
+    width:100%;
+    border-radius:20px;
+}
+
+/* profile */
+
+.profile-box{
+
+    width:100%;
+    margin-top:20px;
+    border-radius:20px;
+}
+
+/* cards */
+
+.cards-container{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    padding:15px;
+}
+
+.card{
+
+    width:100%;
+    border-radius:18px;
+}
+
+/* notification full */
+
+.notification-card{
+
+    grid-column:span 2;
+}
+
+/* remove bottom nav */
+
+.bottom-navbar,
+.bottom-nav,
+.mobile-bottom-nav{
+
+    display:none !important;
+}
+
+/* slider style */
+
+.dashboard-banner,
+.hero-slider,
+.hero-section{
+
+    border-radius:20px;
+    overflow:hidden;
+}
+
+body{
+
+    overflow-x:hidden;
+}
+
+}
+
     </style>
 
 
@@ -640,6 +794,35 @@ body{
 <body>
 
     {% include 'library/navbar.html' %}
+
+    <div class="mobile-topbar">
+
+    <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <div class="mobile-logo">
+
+        <img src="{% static 'images/logo.jpg' %}" alt="">
+
+        <div>
+
+            <h3>शारणम्</h3>
+
+            <p>Sitting Library</p>
+
+        </div>
+
+    </div>
+
+    <div class="notify-icon">
+
+        🔔
+
+    </div>
+
+</div>
+
 <div class="top-section">
 
     <!-- LEFT -->
@@ -976,5 +1159,16 @@ font-weight:bold;
     </div>
 
 </div>
+
+<script>
+
+function toggleMenu(){
+
+    const menu = document.getElementById("mobileMenu");
+
+    menu.classList.toggle("show");
+}
+
+</script>
 
 </body>
