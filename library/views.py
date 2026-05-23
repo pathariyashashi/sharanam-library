@@ -48,32 +48,32 @@ def register(request):
         return redirect('login')
 
     return render(request, 'library/register.html')
-
-# LOGIN
 # LOGIN PAGE
 def login_view(request):
 
     if request.method == 'POST':
 
-        username = request.POST['username']
-        password = request.POST['password']
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
-        try:
+        student = Student.objects.filter(
+            username=username,
+            password=password
+        ).first()
 
-            student = Student.objects.get(
-                username=username,
-                password=password
-            )
+        if student:
 
             request.session['student_id'] = student.id
 
             return redirect('dashboard')
 
-        except:
+        else:
 
-            return render(request,
-                          'library/login.html',
-                          {'error':'Invalid Username or Password'})
+            return render(
+                request,
+                'library/login.html',
+                {'error': 'Invalid Username or Password'}
+            )
 
     return render(request, 'library/login.html')
 # DASHBOARD PAGE

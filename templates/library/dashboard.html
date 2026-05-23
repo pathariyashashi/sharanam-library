@@ -787,7 +787,131 @@ body{
 }
 
 }
+/* MOBILE FIX */
 
+.mobile-logo-img{
+     width:120px;
+    height:auto;
+}
+@media screen and (max-width:768px){
+
+    .mobile-logo-img{
+        width:60px;
+        height:60px;
+        object-fit:contain;
+    }
+
+@media screen and (max-width:768px){
+
+    .top-section{
+        flex-direction:column;
+        padding:15px;
+    }
+
+    .library-box,
+    .welcome-box,
+    .profile-box{
+        width:100%;
+    }
+
+    .cards-container{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+        padding:10px;
+    }
+
+    .info-card{
+        width:100%;
+    }
+
+    .bottom-navbar{
+        display:flex;
+    }
+
+    body{
+        overflow-x:hidden;
+    }
+}
+@media screen and (max-width:768px){
+
+    body{
+        overflow-x:hidden;
+        background:#f4f6fb;
+        padding-bottom:90px;
+    }
+
+    .top-section{
+        flex-direction:column;
+        padding:15px;
+        gap:15px;
+    }
+
+    .library-box,
+    .welcome-box,
+    .profile-box{
+        width:100% !important;
+        margin:0;
+    }
+
+    .library-box{
+        min-height:auto;
+        padding:20px;
+        border-radius:20px;
+    }
+
+    .library-box h1{
+        font-size:48px;
+        line-height:60px;
+    }
+
+    .cards-container{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+        padding:15px;
+    }
+
+    .info-card{
+        width:100%;
+        min-height:200px;
+    }
+
+    .attendance-btn,
+    .book-btn{
+        width:100%;
+    }
+
+    .mobile-logo-img{
+        width:60px;
+        height:60px;
+        object-fit:contain;
+    }
+
+    .bottom-navbar{
+        position:fixed;
+        bottom:0;
+        left:0;
+        width:100%;
+        background:white;
+        display:flex;
+        justify-content:space-around;
+        padding:10px 0;
+        border-top:1px solid #ddd;
+        z-index:9999;
+    }
+
+    .bottom-navbar a{
+        text-decoration:none;
+        color:#0d47a1;
+        font-size:13px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:5px;
+    }
+
+}
     </style>
 
 
@@ -804,7 +928,7 @@ body{
 
     <div class="mobile-logo">
 
-        <img src="{% static 'images/logo.jpg' %}" alt="">
+       <img src="{% static 'images/logo.jpg' %}" class="mobile-logo-img" alt="">
 
         <div>
 
@@ -1171,5 +1295,32 @@ function toggleMenu(){
 }
 
 </script>
+<div class="bottom-navbar">
 
+    <a href="/dashboard/">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </a>
+
+    <a href="/seat-booking/">
+        <i class="fas fa-chair"></i>
+        <span>Seat</span>
+    </a>
+
+    <a href="/attendance-history/">
+        <i class="fas fa-calendar-check"></i>
+        <span>Attendance</span>
+    </a>
+
+    <a href="/gallery/">
+        <i class="fas fa-book"></i>
+        <span>Books</span>
+    </a>
+
+    <a href="/edit-profile/">
+        <i class="fas fa-user"></i>
+        <span>Profile</span>
+    </a>
+
+</div>
 </body>
