@@ -19,21 +19,43 @@ def register(request):
 
     if request.method == 'POST':
 
-        fullname = request.POST['fullname']
-        username = request.POST['username']
-        email = request.POST['email']
-        mobile = request.POST['mobile']
-        dob = request.POST['dob']
-        gender = request.POST['gender']
-        current_address = request.POST['current_address']
-        permanent_address = request.POST['permanent_address']
-        password = request.POST['password']
+        fullname = request.POST.get('fullname')
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        mobile = request.POST.get('mobile')
+        dob = request.POST.get('dob')
+        gender = request.POST.get('gender')
+        current_address = request.POST.get('current_address')
+        permanent_address = request.POST.get('permanent_address')
+        password = request.POST.get('password')
+
+        # CHECK DUPLICATE USERNAME
+
+        existing_user = Student.objects.filter(
+            username=username
+        ).first()
+
+        if existing_user:
+
+            return render(
+
+                request,
+
+                'library/register.html',
+
+                {
+                    'error': 'Username already exists'
+                }
+
+            )
+
+        # SAVE STUDENT
 
         student = Student(
 
             fullname=fullname,
             username=username,
-                        email=email,
+            email=email,
             mobile=mobile,
             dob=dob,
             gender=gender,
@@ -49,12 +71,13 @@ def register(request):
 
     return render(request, 'library/register.html')
 # LOGIN PAGE
+
 def login_view(request):
 
-    if request.method == 'POST':
+    if request.method == "POST":
 
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+        username = request.POST.get("username")
+        password = request.POST.get("password")
 
         student = Student.objects.filter(
             username=username,
@@ -83,27 +106,26 @@ def dashboard(request):
     student_id = request.session.get('student_id')
 
     if not student_id:
-
         return redirect('login')
 
-    student = Student.objects.get(id=student_id)
+    student = Student.objects.filter(
+        id=student_id
+    ).first()
+
+    if not student:
+        return redirect('login')
 
     # =========================
     # ATTENDANCE ANALYTICS
     # =========================
 
     total_attendance = Attendance.objects.filter(
-
         student=student
-
     ).count()
 
     present_days = Attendance.objects.filter(
-
         student=student,
-
         check_in__isnull=False
-
     ).count()
 
     absent_days = total_attendance - present_days
@@ -111,9 +133,7 @@ def dashboard(request):
     if total_attendance > 0:
 
         attendance_percentage = int(
-
             (present_days / total_attendance) * 100
-
         )
 
     else:
@@ -125,15 +145,11 @@ def dashboard(request):
     # =========================
 
     payment = Payment.objects.filter(
-
         student=student
-
     ).last()
 
     booking = SeatBooking.objects.filter(
-
         student=student
-
     ).last()
 
     # =========================
@@ -143,11 +159,8 @@ def dashboard(request):
     today = datetime.now().date()
 
     attendance = Attendance.objects.filter(
-
         student=student,
-
         date=today
-
     ).first()
 
     # =========================
